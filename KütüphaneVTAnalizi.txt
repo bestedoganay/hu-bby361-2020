@@ -1,0 +1,19 @@
+Küçük ölçekli bir kütüphane için tasarlanacak olan veri tabani bölgedeki ki kütüphane kullanicilarinin kütüphaneden en çok sorguladiklari konu olan çocuk gelisimi üzerine bir veri tabani olacaktir.Veri tabani konu hakkinda yazilmis olan kaynaklardan sadece makale bilgisine eristirecektir. kütüphanenin yaptigi arastirma sonucu bölgede ki kullanicilar kütüphaneden en çok makale talep etmislerdir. Bu veri tabani sayesinde kütüphane kullanicilari çocuk gelisimi üzerine yazilmis olan makalelere ve bu makalelerin yil, yazar ve yayimlandiklari dergi gibi verilerine kolaylikla erisebileceklerdir. olusturulacak olan veri tabaninda ; yazar, yayim yili ve yayimlanan dergi adi bilgilerine erisim saglanabilinecektir. veri tabaninda toplanilacak bilgilerin tamami ise su sekildedir;
+makaleye iliskin veriler
+* makalenin adi 
+* makalenin doi numarasi
+* makalenin yayim yili
+* makalenin dili
+* makalenin ülkesi
+yazara iliskin veriler 
+* yazarin adi soyadi
+* yazar numarasi
+* yazarin dogum ölüm bilgisi
+* yazarin kisisel web sitesi(varsa)
+dergiye iliskin veriler
+* derginin adi
+* dergi numarasi
+* derginin online adresi
+
+
+
