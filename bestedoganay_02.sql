@@ -2,10 +2,10 @@
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Dec 05, 2020 at 06:38 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 30 Ara 2020, 12:32:53
+-- Sunucu sürümü: 10.4.14-MariaDB
+-- PHP Sürümü: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bestedoganay`
+-- Veritabanı: `bestedoganay`
 --
 CREATE DATABASE IF NOT EXISTS `bestedoganay` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 USE `bestedoganay`;
@@ -26,72 +26,61 @@ USE `bestedoganay`;
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `arama`
--- (See below for the actual view)
---
-CREATE TABLE `arama` (
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `bestedoganay`
--- (See below for the actual view)
+-- Görünüm yapısı durumu `bestedoganay`
+-- (Asıl görünüm için aşağıya bakın)
 --
 CREATE TABLE `bestedoganay` (
+`makaleAdi` varchar(300)
+,`yazaradi` varchar(100)
+,`yazarsoyadi` varchar(100)
+,`dergiadi` varchar(100)
 );
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dergi`
+-- Tablo için tablo yapısı `dergi`
 --
 
 CREATE TABLE `dergi` (
   `dergino` int(11) NOT NULL COMMENT 'derginin numarası',
   `dergiadi` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'derginin adı',
-  `dergiUlke` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'derginin ülkesi',
-  `dergiURL` varchar(75) COLLATE utf8_unicode_ci NOT NULL
+  `dergiulke` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'derginin ülkesi'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='dergiler';
 
 --
--- Dumping data for table `dergi`
+-- Tablo döküm verisi `dergi`
 --
 
-INSERT INTO `dergi` (`dergino`, `dergiadi`, `dergiUlke`, `dergiURL`) VALUES
-(1, 'G.Ü. Gazi Eğitim Fakültesi Dergisi', 'Türkiye', 'http://www.gefad.gazi.edu.tr/tr/'),
-(3, 'Türk Kütüphaneciliği', 'Türkiye', 'http://www.tk.org.tr/index.php/TK'),
-(4, 'British Educational Research Journal', 'İngiltere', 'https://bera-journals.onlinelibrary.wiley.com/journal/14693518'),
-(5, 'Universidad de Huelva', 'İspanya', 'www.uhu.es\r\n'),
-(6, 'NUMBERS, FACTS AND TRENDS SHAPING THE WORLD ', 'Amerika', 'https://www.loc.gov/item/lcwaN0002821/'),
-(7, 'Dokuz Eylül Üniversitesi\r\nSosyal Bilimler Enstitüsü Dergisi', 'Türkiye', 'https://dergipark.org.tr/tr/pub/deusosbil'),
-(8, 'Anadolu Psikiyatri Dergisi', 'Türkiye', 'https://www.anadolupsikiyatri.net'),
-(9, 'Wesleyan University Publish', 'Amerika', 'https://www.wesleyan.edu/wespress/'),
-(10, 'Selçuk Üniversitesi dergisi', 'Türkiye', 'http://dergisosyalbil.selcuk.edu.tr/susbed'),
-(11, 'Akademi dergisi', 'Türkiye', 'https://dergipark.org.tr/tr/pub/kesitakademi');
+INSERT INTO `dergi` (`dergino`, `dergiadi`, `dergiulke`) VALUES
+(1, 'G.Ü. Gazi Eğitim Fakültesi Dergisi', 'Türkiye'),
+(3, 'Türk Kütüphaneciliği', 'Türkiye'),
+(4, 'British Educational Research Journal', 'İngiltere'),
+(5, 'Universidad de Huelva', 'İspanya'),
+(6, 'NUMBERS, FACTS AND TRENDS SHAPING THE WORLD ', 'Amerika'),
+(7, 'Dokuz Eylül Üniversitesi\r\nSosyal Bilimler Enstitüsü Dergisi', 'Türkiye'),
+(8, 'Anadolu Psikiyatri Dergisi', 'Türkiye'),
+(9, 'Wesleyan University Publish', 'Amerika'),
+(10, 'Selçuk Üniversitesi dergisi', 'Türkiye'),
+(11, 'Akademi dergisi', 'Türkiye');
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `kutuphane`
--- (See below for the actual view)
---
-CREATE TABLE `kutuphane` (
-);
-
--- --------------------------------------------------------
-
---
--- Stand-in structure for view `library`
--- (See below for the actual view)
+-- Görünüm yapısı durumu `library`
+-- (Asıl görünüm için aşağıya bakın)
 --
 CREATE TABLE `library` (
+`makaleAdi` varchar(300)
+,`yazaradi` varchar(100)
+,`yazarsoyadi` varchar(100)
+,`dergiadi` varchar(100)
 );
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `makaleler`
+-- Tablo için tablo yapısı `makaleler`
 --
 
 CREATE TABLE `makaleler` (
@@ -105,7 +94,7 @@ CREATE TABLE `makaleler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `makaleler`
+-- Tablo döküm verisi `makaleler`
 --
 
 INSERT INTO `makaleler` (`makaleAdi`, `makaleYazari`, `makaleDili`, `makaleTarih`, `makaleUlke`, `makaleDoi`, `MakaleNo`) VALUES
@@ -116,27 +105,27 @@ INSERT INTO `makaleler` (`makaleAdi`, `makaleYazari`, `makaleDili`, `makaleTarih
 ('Social Media Usage:2005-2015 \r\n', 'Andrew Perrin', 'İngilizce', 2015, 'Amerika', NULL, 6),
 ('DOĞAL AFET YÖNETİMİ VE\r\nYEREL GÜNDEM 21 ÇALIŞMALARI KAPSAMINDA\r\nİZMİR’DE DEPREM RİSKİ', 'Hikmet YAVAŞ', 'Türkçe', 2001, 'Türkiye', NULL, 7),
 ('Kadına yönelik aile içi şiddet ve kadınların aile içi şiddete bakışı', 'Şengül YAMAN EFE', 'Türkçe', 2010, 'Türkiye', NULL, 8),
-('An Attitude Survey of Animal Rights Activists', 'Scott Plous', 'İngilizce', 1991, 'Amerika', 14679280, 9),
+('An Attitude Survey of Animal Rights Activists', 'Scott Plous', 'İngilizce', 1991, 'Amerika', NULL, 9),
 ('Türkiye\'de bulunan bazı kedi ırklarının D-Loop polimorfizminin araştırılması', 'Elif yılmaz', 'Türkçe', 2010, 'Türkiye', NULL, 10),
 ('Sanat felsefesi̇nde esteti̇k obje çözümlemesi̇ açısından ebru sanatı', 'Osman Mutluel', 'Türkçe', 2014, 'Türkiye', NULL, 11);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `yazar`
+-- Tablo için tablo yapısı `yazar`
 --
 
 CREATE TABLE `yazar` (
   `yazarno` int(11) NOT NULL COMMENT 'yazar numarası',
-  `yazaradı` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'yazarın adı',
-  `yazarsoyadı` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'yazarın soyadı'
+  `yazaradi` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'yazarın adı',
+  `yazarsoyadi` varchar(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'yazarın soyadı'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='yazarlar';
 
 --
--- Dumping data for table `yazar`
+-- Tablo döküm verisi `yazar`
 --
 
-INSERT INTO `yazar` (`yazarno`, `yazaradı`, `yazarsoyadı`) VALUES
+INSERT INTO `yazar` (`yazarno`, `yazaradi`, `yazarsoyadi`) VALUES
 (1, 'Şeyda ', 'Çilden'),
 (2, 'Umut ', 'Al'),
 (3, 'Stenhouse', 'Lawrance'),
@@ -151,79 +140,61 @@ INSERT INTO `yazar` (`yazarno`, `yazaradı`, `yazarsoyadı`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure for view `arama`
---
-DROP TABLE IF EXISTS `arama`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `arama`  AS SELECT `makaleler`.`makaleAdı` AS `makaleAdı`, `makaleler`.`makaleYazarı` AS `makaleYazarı`, `makaleler`.`makaleDili` AS `makaleDili`, `makaleler`.`makaleTarih` AS `makaleTarih`, `makaleler`.`makaleUlke` AS `makaleUlke`, `makaleler`.`makaleDoi` AS `makaleDoi`, `makaleler`.`MakaleNo` AS `MakaleNo` FROM `makaleler` WHERE `makaleler`.`makaleTarih` > 2000 ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `bestedoganay`
+-- Görünüm yapısı `bestedoganay`
 --
 DROP TABLE IF EXISTS `bestedoganay`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `bestedoganay`  AS SELECT `m`.`makaleAdı` AS `makaleAdı`, `y`.`yazaradı` AS `yazaradı`, `y`.`yazarsoyadı` AS `yazarsoyadı`, `d`.`dergiadı` AS `dergiadı` FROM ((`dergi` `d` join `makaleler` `m`) join `yazar` `y`) WHERE `m`.`MakaleNo` = `d`.`dergino` AND `m`.`MakaleNo` = `y`.`yazarno` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `bestedoganay`  AS SELECT `m`.`makaleAdi` AS `makaleAdi`, `y`.`yazaradi` AS `yazaradi`, `y`.`yazarsoyadi` AS `yazarsoyadi`, `d`.`dergiadi` AS `dergiadi` FROM ((`dergi` `d` join `makaleler` `m`) join `yazar` `y`) WHERE `m`.`MakaleNo` = `d`.`dergino` AND `m`.`MakaleNo` = `y`.`yazarno` ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `kutuphane`
---
-DROP TABLE IF EXISTS `kutuphane`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `kutuphane`  AS SELECT `m`.`makaleAdı` AS `makaleAdı`, `y`.`yazaradı` AS `yazaradı`, `y`.`yazarsoyadı` AS `yazarsoyadı`, `d`.`dergiadı` AS `dergiadı` FROM ((`dergi` `d` join `makaleler` `m`) join `yazar` `y`) WHERE `m`.`MakaleNo` = `d`.`dergino` AND `m`.`MakaleNo` = `y`.`yazarno` ;
-
--- --------------------------------------------------------
-
---
--- Structure for view `library`
+-- Görünüm yapısı `library`
 --
 DROP TABLE IF EXISTS `library`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `library`  AS SELECT `m`.`makaleAdı` AS `makaleAdı`, `y`.`yazaradı` AS `yazaradı`, `y`.`yazarsoyadı` AS `yazarsoyadı`, `d`.`dergiadı` AS `dergiadı` FROM ((`dergi` `d` join `makaleler` `m`) join `yazar` `y`) WHERE `m`.`MakaleNo` = `d`.`dergino` AND `m`.`MakaleNo` = `y`.`yazarno` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `library`  AS SELECT `m`.`makaleAdi` AS `makaleAdi`, `y`.`yazaradi` AS `yazaradi`, `y`.`yazarsoyadi` AS `yazarsoyadi`, `d`.`dergiadi` AS `dergiadi` FROM ((`dergi` `d` join `makaleler` `m`) join `yazar` `y`) WHERE `m`.`MakaleNo` = `d`.`dergino` AND `m`.`MakaleNo` = `y`.`yazarno` ;
 
 --
--- Indexes for dumped tables
+-- Dökümü yapılmış tablolar için indeksler
 --
 
 --
--- Indexes for table `dergi`
+-- Tablo için indeksler `dergi`
 --
 ALTER TABLE `dergi`
   ADD PRIMARY KEY (`dergino`);
 
 --
--- Indexes for table `makaleler`
+-- Tablo için indeksler `makaleler`
 --
 ALTER TABLE `makaleler`
   ADD PRIMARY KEY (`MakaleNo`);
 
 --
--- Indexes for table `yazar`
+-- Tablo için indeksler `yazar`
 --
 ALTER TABLE `yazar`
   ADD PRIMARY KEY (`yazarno`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
 --
--- AUTO_INCREMENT for table `dergi`
+-- Tablo için AUTO_INCREMENT değeri `dergi`
 --
 ALTER TABLE `dergi`
   MODIFY `dergino` int(11) NOT NULL AUTO_INCREMENT COMMENT 'derginin numarası', AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `makaleler`
+-- Tablo için AUTO_INCREMENT değeri `makaleler`
 --
 ALTER TABLE `makaleler`
   MODIFY `MakaleNo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'makale numarası', AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `yazar`
+-- Tablo için AUTO_INCREMENT değeri `yazar`
 --
 ALTER TABLE `yazar`
   MODIFY `yazarno` int(11) NOT NULL AUTO_INCREMENT COMMENT 'yazar numarası', AUTO_INCREMENT=11;
