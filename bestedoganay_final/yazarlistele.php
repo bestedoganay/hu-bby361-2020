@@ -14,7 +14,7 @@
     
     <body>
         <div id="ust">
-
+            <a href="index.html">Ana Sayfa</a>
             <a  href="makalelistele.php" >Makale İşlemleri</a>
             <a  href="yazarlistele.php" >Yazar İşlemleri</a>
             <a  href="listele.php" >Dergi İşlemleri</a> 
