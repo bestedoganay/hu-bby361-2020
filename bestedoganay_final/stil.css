@@ -1,0 +1,35 @@
+*{
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+    margin: auto;
+    color:black;
+    
+
+}
+html{
+    background: url('son.jpg') no-repeat center center fixed #000;
+    background-size: cover;
+}
+
+#ust a{
+
+    background-color:#4D7285;
+    padding: 25px;
+    font-size: 25px;
+    border-radius: 10px;
+    margin-left: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+#ust {
+	padding: 2%;
+}
+
+
+a {
+    text-decoration: none;
+    color:#4D7285;
+    
+}
